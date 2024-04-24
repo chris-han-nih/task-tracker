@@ -5,6 +5,7 @@ plugins {
   id("io.spring.dependency-management") version "1.1.4"
   kotlin("jvm") version "1.9.23"
   kotlin("plugin.spring") version "1.9.23"
+  kotlin("plugin.jpa") version "1.9.23"
 }
 
 group = "chris"
@@ -25,6 +26,9 @@ dependencies {
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.springframework.boot:spring-boot-starter-validation")
+  implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+  implementation("org.flywaydb:flyway-core")
+  implementation("org.flywaydb:flyway-mysql")
   
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("org.springframework.boot:spring-boot-starter-webflux")
@@ -33,13 +37,8 @@ dependencies {
   testImplementation("io.kotest:kotest-assertions-core:5.8.0")
   testImplementation("io.mockk:mockk:1.12.0")
   testImplementation("io.projectreactor:reactor-test")
+  runtimeOnly("com.mysql:mysql-connector-j")
 }
-
-//dependencyManagement {
-//  imports {
-//    mavenBom("com.vaadin:vaadin-bom:${property("vaadinVersion")}")
-//  }
-//}
 
 tasks.withType<KotlinCompile> {
   kotlinOptions {

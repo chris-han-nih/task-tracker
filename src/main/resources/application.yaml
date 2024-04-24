@@ -1,5 +1,24 @@
 server:
-  port: 8080
+  port: ${SERVICE_PORT:80}
+logging:
+  level:
+    root: ${LOG_LEVEL:-INFO}
 spring:
   application:
     name: task-tracker
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_URL:localhost}/task_tracker
+    username: ${DB_USER:root}
+    password: ${DB_PWD:1q2w3e4r}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: ${SHOW_SQL:false}
+        format_sql: ${FORMAT_SQL:false}
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
