@@ -1,5 +1,6 @@
 package chris.tasktracker.entity
 
+import chris.tasktracker.domain.Task
 import chris.tasktracker.domain.TaskStatus
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
@@ -18,7 +19,7 @@ import java.time.LocalDateTime
 class TaskEntity (
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  val id: Long,
+  val id: Long? = null,
   @Column(name="title", nullable = false, length = 100)
   val title: String,
   @Column(name="memo", nullable = false, length = 255)
@@ -33,3 +34,24 @@ class TaskEntity (
   @LastModifiedDate
   val dueDate: LocalDateTime?,
 )
+
+fun Task.toEntity(): TaskEntity {
+  return TaskEntity(
+    title = title,
+    memo = memo,
+    status = status,
+    startDate = startDate,
+    dueDate = dueDate
+  )
+}
+
+fun TaskEntity.toDomain(): Task {
+  return Task(
+    id = id!!,
+    title = title,
+    memo = memo,
+    status = status,
+    startDate = startDate,
+    dueDate = dueDate
+  )
+}
