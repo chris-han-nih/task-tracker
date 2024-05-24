@@ -4,6 +4,7 @@ import jakarta.validation.Constraint
 import jakarta.validation.ConstraintValidator
 import jakarta.validation.ConstraintValidatorContext
 import jakarta.validation.Payload
+import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
 @MustBeDocumented

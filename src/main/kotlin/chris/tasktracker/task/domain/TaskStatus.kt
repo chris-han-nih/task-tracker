@@ -1,4 +1,4 @@
-package chris.tasktracker.domain
+package chris.tasktracker.task.domain
 
 import com.fasterxml.jackson.annotation.JsonCreator
 

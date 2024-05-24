@@ -1,6 +1,6 @@
-package chris.tasktracker.model
+package chris.tasktracker.task.adapter.`in`.controller.model
 
-import chris.tasktracker.domain.Task
+import chris.tasktracker.task.domain.Task
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime

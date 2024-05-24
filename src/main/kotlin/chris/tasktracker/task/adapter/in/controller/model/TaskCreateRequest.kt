@@ -1,7 +1,7 @@
-package chris.tasktracker.model
+package chris.tasktracker.task.adapter.`in`.controller.model
 
-import chris.tasktracker.domain.Task
-import chris.tasktracker.domain.TaskStatus
+import chris.tasktracker.task.domain.Task
+import chris.tasktracker.task.domain.TaskStatus
 import chris.tasktracker.util.ValueOfEnum
 import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.validation.constraints.NotBlank

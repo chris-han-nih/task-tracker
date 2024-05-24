@@ -1,6 +1,7 @@
 package chris.tasktracker.controller
 
-import chris.tasktracker.service.TaskUseCase
+import chris.tasktracker.task.application.port.`in`.TaskUseCase
+import chris.tasktracker.task.adapter.`in`.controller.TaskTrackerController
 import io.kotest.core.spec.style.BehaviorSpec
 import io.mockk.mockk
 import org.springframework.test.web.reactive.server.WebTestClient

@@ -1,11 +1,12 @@
-package chris.tasktracker.entity
+package chris.tasktracker.task.adapter.out.entity
 
-import chris.tasktracker.domain.Task
-import chris.tasktracker.domain.TaskStatus
+import chris.tasktracker.task.domain.Task
+import chris.tasktracker.task.domain.TaskStatus
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.LocalDateTime
+import java.util.*
 
 @Entity
 @Table(
@@ -18,8 +19,8 @@ import java.time.LocalDateTime
 )
 class TaskEntity (
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  val id: Long? = null,
+  @GeneratedValue(strategy = GenerationType.UUID)
+  val id: UUID,
   @Column(name="title", nullable = false, length = 100)
   val title: String,
   @Column(name="memo", nullable = false, length = 255)
@@ -37,17 +38,18 @@ class TaskEntity (
 
 fun Task.toEntity(): TaskEntity {
   return TaskEntity(
+    id = id,
     title = title,
     memo = memo,
     status = status,
     startDate = startDate,
-    dueDate = dueDate
+    dueDate = dueDate,
   )
 }
 
 fun TaskEntity.toDomain(): Task {
   return Task(
-    id = id!!,
+    id = id,
     title = title,
     memo = memo,
     status = status,

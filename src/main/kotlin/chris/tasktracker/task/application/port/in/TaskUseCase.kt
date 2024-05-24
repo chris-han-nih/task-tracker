@@ -1,7 +1,6 @@
-package chris.tasktracker.service
+package chris.tasktracker.task.application.port.`in`
 
-import chris.tasktracker.domain.Task
-
+import chris.tasktracker.task.domain.Task
 
 interface TaskUseCase {
   fun createTask(task: Task): Task

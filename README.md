@@ -39,6 +39,8 @@ Once the server is running, you can interact with the API. Detailed API document
 ## Contributing
 Contributions are welcome! Please feel free to fork the repository, make changes, and submit pull requests.
 
+/////////// https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture-java/ ///////////
+
 ## References
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Kotlin](https://kotlinlang.org/)

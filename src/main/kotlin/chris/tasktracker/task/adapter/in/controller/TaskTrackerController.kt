@@ -1,8 +1,8 @@
-package chris.tasktracker.controller
+package chris.tasktracker.task.adapter.`in`.controller
 
-import chris.tasktracker.model.TaskCreateRequest
-import chris.tasktracker.model.toResponse
-import chris.tasktracker.service.TaskUseCase
+import chris.tasktracker.task.adapter.`in`.controller.model.TaskCreateRequest
+import chris.tasktracker.task.adapter.`in`.controller.model.toResponse
+import chris.tasktracker.task.application.port.`in`.TaskUseCase
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping

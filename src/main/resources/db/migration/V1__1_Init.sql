@@ -1,6 +1,6 @@
 CREATE TABLE task
 (
-    id         BIGINT AUTO_INCREMENT NOT NULL,
+    id         BINARY(16) NOT NULL,
     title      VARCHAR(100) NOT NULL,
     memo       VARCHAR(255) NOT NULL,
     status     VARCHAR(20)  NOT NULL,
