@@ -1,5 +1,6 @@
 package chris.tasktracker.task.application.service
 
+import chris.tasktracker.task.adapter.out.TaskPersistenceAdapter
 import chris.tasktracker.task.domain.Task
 import chris.tasktracker.task.framework.entity.toDomain
 import chris.tasktracker.task.framework.entity.toEntity
@@ -10,13 +11,12 @@ import java.util.*
 
 @Service
 class TaskService (
-  private val taskRepository: TaskRepository
+  private val taskPersistenceAdapter: TaskPersistenceAdapter
 ): TaskUseCase {
   
   override fun createTask(task: Task): Task {
-    val entity = task.toEntity()
-    val result = taskRepository.save(entity)
-    return result.toDomain()
+    val result = taskPersistenceAdapter.createTask(task)
+    return result
   }
   
   override fun getTask(id: UUID): Task {
