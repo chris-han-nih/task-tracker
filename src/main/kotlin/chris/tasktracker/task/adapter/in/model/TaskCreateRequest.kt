@@ -1,4 +1,4 @@
-package chris.tasktracker.task.adapter.`in`.controller.model
+package chris.tasktracker.task.adapter.`in`.model
 
 import chris.tasktracker.task.domain.Task
 import chris.tasktracker.task.domain.TaskStatus

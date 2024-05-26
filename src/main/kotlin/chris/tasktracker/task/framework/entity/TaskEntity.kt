@@ -1,4 +1,4 @@
-package chris.tasktracker.task.adapter.out.entity
+package chris.tasktracker.task.framework.entity
 
 import chris.tasktracker.task.domain.Task
 import chris.tasktracker.task.domain.TaskStatus

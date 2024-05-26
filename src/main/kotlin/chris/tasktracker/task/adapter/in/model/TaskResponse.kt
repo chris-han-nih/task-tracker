@@ -1,12 +1,13 @@
-package chris.tasktracker.task.adapter.`in`.controller.model
+package chris.tasktracker.task.adapter.`in`.model
 
 import chris.tasktracker.task.domain.Task
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime
+import java.util.*
 
 class TaskResponse (
-  val id: Long,
+  val id: UUID,
   val title: String,
   val memo: String,
   val status: String,
@@ -20,7 +21,7 @@ class TaskResponse (
 
 fun Task.toResponse(): TaskResponse {
   return TaskResponse(
-    id = this.id ?: 0,
+    id = this.id,
     title = this.title,
     memo = this.memo,
     status = this.status.toString(),

@@ -1,11 +1,12 @@
 package chris.tasktracker.task.application.service
 
 import chris.tasktracker.task.domain.Task
-import chris.tasktracker.task.adapter.out.entity.toDomain
-import chris.tasktracker.task.adapter.out.entity.toEntity
-import chris.tasktracker.task.adapter.out.repository.TaskRepository
+import chris.tasktracker.task.framework.entity.toDomain
+import chris.tasktracker.task.framework.entity.toEntity
+import chris.tasktracker.task.framework.repository.TaskRepository
 import chris.tasktracker.task.application.port.`in`.TaskUseCase
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
 class TaskService (
@@ -18,7 +19,7 @@ class TaskService (
     return result.toDomain()
   }
   
-  override fun getTask(id: Long): Task {
+  override fun getTask(id: UUID): Task {
     TODO("Not yet implemented")
   }
   
@@ -30,7 +31,7 @@ class TaskService (
     TODO("Not yet implemented")
   }
   
-  override fun deleteTask(id: Long) {
+  override fun deleteTask(id: UUID) {
     TODO("Not yet implemented")
   }
 }
