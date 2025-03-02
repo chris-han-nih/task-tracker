@@ -36,11 +36,23 @@ Once the server is running, you can interact with the API. Detailed API document
 - **PUT /tasks/{id}**: Updates an existing task.
 - **DELETE /tasks/{id}**: Deletes a task.
 
+## TaskTrackerController
+The `TaskTrackerController` class is responsible for handling incoming HTTP requests related to tasks. It provides endpoints for creating tasks and retrieving task information. The controller is located in `src/main/kotlin/chris/tasktracker/task/adapter/in/controller/TaskTrackerController.kt`.
+
+## TaskCreateRequest
+The `TaskCreateRequest` class represents the request payload for creating a new task. It includes fields such as title, memo, start date, due date, and status. The class is located in `src/main/kotlin/chris/tasktracker/task/adapter/in/model/TaskCreateRequest.kt`.
+
+## TaskService
+The `TaskService` class is responsible for the business logic related to tasks. It provides methods for creating, retrieving, updating, and deleting tasks. The service is located in `src/main/kotlin/chris/tasktracker/task/application/service/TaskService.kt`.
+
+## Task
+The `Task` class represents the domain model for a task. It includes fields such as id, title, memo, status, start date, and due date. The class is located in `src/main/kotlin/chris/tasktracker/task/domain/Task.kt`.
+
+## TaskRepository
+The `TaskRepository` interface provides methods for interacting with the database to perform CRUD operations on tasks. The interface is located in `src/main/kotlin/chris/tasktracker/task/framework/repository/TaskRepository.kt`.
+
 ## Contributing
 Contributions are welcome! Please feel free to fork the repository, make changes, and submit pull requests.
-
-/////////// https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture-java/ ///////////
-
 
 ## References
 - [Spring Boot](https://spring.io/projects/spring-boot)
